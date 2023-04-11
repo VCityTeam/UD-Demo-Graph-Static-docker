@@ -31,4 +31,4 @@ services:
     build:
       context: ./ud-viz-context
     ports:
-      - ${UD_VIZ_PORT}:80
+      - ${UD_VIZ_PORT}:8998

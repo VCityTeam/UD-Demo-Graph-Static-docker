@@ -2,17 +2,14 @@ FROM ubuntu:focal
 
 # Install dependencies
 RUN apt-get update
-RUN apt-get install -y \
-        curl \
-        nodejs \
-        git \
- && node --version \
- && npm --version \
- && git --version
+RUN apt-get install -y curl git
 
 # Node version 16 is required. For its installation (on focal) refer to e.g.
 #  https://computingforgeeks.com/install-node-js-14-on-ubuntu-debian-linux/
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
+ && apt-get install -y nodejs
+RUN node --version \
+ && npm --version
 
 ######### Install UD-Viz demo
 WORKDIR /
@@ -24,7 +21,9 @@ WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/UD-Viz
 RUN git checkout 6bc4b7e25c61d60a46f4d7a0eee19d529e1d1758 \
  && npm install
 WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/
-RUN npm install
+RUN npm install \
+ && npm run build
+COPY index.html /UD-Demo-Workspace-GratteCiel/ud-viz-context/
 COPY bootstrap.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/src
 COPY 3DTiles.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/layer/3DTiles.json
 COPY sparql_server.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
