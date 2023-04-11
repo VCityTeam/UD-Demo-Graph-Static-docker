@@ -26,6 +26,7 @@ RUN git checkout 6bc4b7e25c61d60a46f4d7a0eee19d529e1d1758 \
 WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/
 RUN npm install
 COPY bootstrap.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/src
-COPY config.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/
+COPY 3DTiles.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/layer/3DTiles.json
+COPY sparql_server.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
 
 CMD [ "npm", "run", "start"]
