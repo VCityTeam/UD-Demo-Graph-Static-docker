@@ -1,38 +1,31 @@
 FROM ubuntu:focal
 
-LABEL maintainer "VCityTeam"
-LABEL source.repo "https://github.com/VCityTeam/UD-Viz-docker"
-
+# Install dependencies
 RUN apt-get update
+RUN apt-get install -y \
+        curl \
+        nodejs \
+        git \
+ && node --version \
+ && npm --version \
+ && git --version
 
-# Node version 14 is required. For its installation (on focal) refer to e.g.
+# Node version 16 is required. For its installation (on focal) refer to e.g.
 #  https://computingforgeeks.com/install-node-js-14-on-ubuntu-debian-linux/
-RUN apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
-RUN node --version
-RUN npm --version
-RUN apt-get install -y git
-RUN git --version
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 
-######### Install SimpleServer (an ExpressJS based...simple server)
-RUN git clone https://github.com/VCityTeam/UD-SimpleServer
-WORKDIR /UD-SimpleServer
-RUN npm install
-
-######### Install UD-Viz-Template, a basic web application for UD-Viz projects
+######### Install UD-Viz demo
 WORKDIR /
-RUN git clone https://github.com/VCityTeam/UD-Viz-Template.git
-WORKDIR /UD-Viz-Template
-COPY package.json package.json
-COPY bootstrap.js src/bootstrap.js
+RUN git clone https://github.com/VCityTeam/UD-Demo-Workspace-GratteCiel.git
+WORKDIR /UD-Demo-Workspace-GratteCiel
+RUN git submodule init \
+ && git submodule update
+WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/UD-Viz
+RUN git checkout 6bc4b7e25c61d60a46f4d7a0eee19d529e1d1758 \
+ && npm install
+WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/
 RUN npm install
-RUN npm run build
+COPY bootstrap.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/src
+COPY config.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/
 
-# Add/overwrite default assets
-COPY config.json /UD-Viz-Template/assets/config/config.json
-COPY sparqlModule.svg /UD-Viz-Template/assets/icons/sparqlModule.svg
-
-WORKDIR /UD-SimpleServer
-EXPOSE 80
-CMD [ "node", "./index.js", "/UD-Viz-Template", "80" ]
+CMD [ "npm", "run", "start"]
