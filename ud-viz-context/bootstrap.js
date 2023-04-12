@@ -5,7 +5,7 @@ import * as udvizBrowser from "@ud-viz/browser";
 
 udvizBrowser.FileUtil.loadMultipleJSON([
   '../assets/config/all_widget.json',
-  '../assets/config/extent_lyon.json',
+  '../assets/config/extent_gratteciel.json',
   '../assets/config/frame3D_planars.json',
   '../assets/config/layer/3DTiles.json',
   '../assets/config/layer/base_maps.json',
@@ -20,17 +20,17 @@ udvizBrowser.FileUtil.loadMultipleJSON([
   // define a projection as a string and reference it that way
   // the definition of the projection should be in config TODO_ISSUE
   udvizBrowser.proj4.default.defs(
-    configs["extent_lyon"].crs,
+    configs["extent_gratteciel"].crs,
     "+proj=lcc +lat_1=45.25 +lat_2=46.75" +
       " +lat_0=46 +lon_0=3 +x_0=1700000 +y_0=5200000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
   );
 
   const extent = new udvizBrowser.itowns.Extent(
-    configs["extent_lyon"].crs,
-    parseInt(configs["extent_lyon"].west),
-    parseInt(configs["extent_lyon"].east),
-    parseInt(configs["extent_lyon"].south),
-    parseInt(configs["extent_lyon"].north)
+    configs["extent_gratteciel"].crs,
+    parseInt(configs["extent_gratteciel"].west),
+    parseInt(configs["extent_gratteciel"].east),
+    parseInt(configs["extent_gratteciel"].south),
+    parseInt(configs["extent_gratteciel"].north)
   );
 
   const app = new udvizBrowser.AllWidget(
