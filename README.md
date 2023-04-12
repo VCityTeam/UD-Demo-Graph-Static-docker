@@ -27,7 +27,9 @@ To configure the demo and the components that support it edit the `.env` file to
 The following sections will describe how to configure this file for each component. 
 
 ### Build Images and run containers
-First, build the PostGIS, Strabon, and UD-Viz docker images and run their containers:
+First, edit the [credential.properties](./strabon-context/credentials.properties) file to set the credentials used to authenticate user of the strabon frontend.
+
+Then, build the PostGIS, Strabon, and UD-Viz docker images and run their containers:
 ```
 docker-compose up
 ```
@@ -42,7 +44,10 @@ docker-compose build udviz
 To upload these files into Strabon to be used by UD-Viz:
 1. Open a web browser and navigate to `localhost:9007/strabon`
 2. From the left menu, click *Explore/Modify operations* then *Store*
-3. Copy and paste the local path of each file in the data folder as `file:///data/[file to upload]` into the *URI Input* field and click *Store from URI*
-   - ⚠️ You may be asked to enter the Strabon administrative credentials here. However, these credentials currently cannot be changed from the `.env` file. See issue [#1](https://github.com/VCityTeam/UD-Demo-Graph-SPARQL/issues/1).
+3. Copy and paste the following URL into the *URI Input* field and click *Store from URI*. Repeat for each URI. Note you may be asked to enter the Strabon administrative credentials here.
+   1. `https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2009/GratteCiel_2009_split.rdf`
+   1. `https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2012/GratteCiel_2012_split.rdf`
+   1. `https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2015/GratteCiel_2015_split.rdf`
+   1. `https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2018/GratteCiel_2018_split.rdf`
 
 Now the demo is ready and can be accessed from `localhost:9006`
