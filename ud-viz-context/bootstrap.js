@@ -13,7 +13,6 @@ udvizBrowser.FileUtil.loadMultipleJSON([
   '../assets/config/styles.json',
   '../assets/config/widget/about.json',
   '../assets/config/widget/help.json',
-  '../assets/config/widget/temporal.json',
   '../assets/config/widget/sparql_widget.json',
   '../assets/config/server/sparql_server.json'
 ]).then((configs) => {

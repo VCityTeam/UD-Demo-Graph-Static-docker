@@ -1,0 +1,33 @@
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX core: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Ontologies/CityGML/2.0/core#>
+PREFIX bldg: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Ontologies/CityGML/2.0/building#>
+PREFIX v2009: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2009/GratteCiel_2009_split#>
+PREFIX v2012: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2012/GratteCiel_2012_split#>
+PREFIX v2015: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2015/GratteCiel_2015_split#>
+PREFIX v2018: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2018/GratteCiel_2018_split#>
+
+
+# Count the number of buildings in each dataset
+
+SELECT
+  (COUNT(?2009_building) AS ?count_2009)
+  (COUNT(?2012_building) AS ?count_2012)
+  (COUNT(?2015_building) AS ?count_2015)
+  (COUNT(?2018_building) AS ?count_2018)
+WHERE {
+  {
+    v2009:CityModel_0 ?predicate ?2009_building .
+    ?2009_building a bldg:Building .
+  } UNION {
+    v2012:CityModel_0 ?predicate ?2012_building .
+    ?2012_building a bldg:Building .
+  } UNION {
+    v2015:CityModel_0 ?predicate ?2015_building .
+    ?2015_building a bldg:Building .
+  } UNION {
+    v2018:CityModel_0 ?predicate ?2018_building .
+    ?2018_building a bldg:Building .
+  }
+}
+
+LIMIT 30

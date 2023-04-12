@@ -4,32 +4,53 @@
   "fontSize": 6,
   "queries": [
     {
+      "title": "Select a buildings and its details from 2015",
+      "formats": {
+        "graph": "Graph"
+      },
+      "filepath": "../assets/queries/buildingsDetails.rq"
+    },
+    {
+      "title": "Count the number of buildings in each year",
+      "formats": {
+        "table": "Table"
+      },
+      "filepath": "../assets/queries/buildingCount.rq"
+    },
+    {
+      "title": "Select All buildings from Gratte Ciel 2015 (warning big query!)",
+      "formats": {
+        "graph": "Graph"
+      },
+      "filepath": "../assets/queries/allBuildings2015.rq"
+    },
+    {
       "title": "Select 30 buildings from Gratte Ciel 2009",
       "formats": {
         "graph": "Graph"
       },
-      "filepath": "./assets/queries/gratteciel_2009.rq"
+      "filepath": "../assets/queries/30buildings2009.rq"
     },
     {
       "title": "Select 30 buildings from Gratte Ciel 2012",
       "formats": {
         "graph": "Graph"
       },
-      "filepath": "./assets/queries/gratteciel_2012.rq"
+      "filepath": "../assets/queries/30buildings2012.rq"
     },
     {
       "title": "Select 30 buildings from Gratte Ciel 2015",
       "formats": {
         "graph": "Graph"
       },
-      "filepath": "./assets/queries/gratteciel_2015.rq"
+      "filepath": "../assets/queries/30buildings2015.rq"
     },
     {
       "title": "Select 30 buildings from Gratte Ciel 2018",
       "formats": {
         "graph": "Graph"
       },
-      "filepath": "./assets/queries/gratteciel_2018.rq"
+      "filepath": "../assets/queries/30buildings2018.rq"
     }
   ],
   "namespaceLabels": {

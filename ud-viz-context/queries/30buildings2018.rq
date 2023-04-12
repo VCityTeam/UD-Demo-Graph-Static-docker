@@ -1,7 +1,7 @@
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX core: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Ontologies/CityGML/2.0/core#>
 PREFIX bldg: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Ontologies/CityGML/2.0/building#>
-PREFIX v2009: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2009/GratteCiel_2009_split#>
+PREFIX v2018: <https://dataset-dl.liris.cnrs.fr/rdf-owl-urban-data-ontologies/Datasets/2018/GratteCiel_2018_split#>
 
 
 # Return several features (with types) within a version
@@ -13,7 +13,7 @@ WHERE {
     a ?subjectType .
   OPTIONAL { ?object a ?objectType }
   
-  FILTER(?subject = v2009:CityModel_0)
+  FILTER(?subject = v2018:CityModel_0)
   FILTER(?subjectType != owl:NamedIndividual)
   FILTER(?objectType != owl:NamedIndividual)
 }
