@@ -18,14 +18,16 @@ WORKDIR /UD-Demo-Workspace-GratteCiel
 RUN git submodule init \
  && git submodule update
 WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/UD-Viz
-RUN git checkout 6bc4b7e25c61d60a46f4d7a0eee19d529e1d1758 \
+RUN git checkout 6dae5ffe9894cad71321c19dece2dfce0ffd2d13 \
  && npm install
 WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/
 RUN npm install \
  && npm run build
 COPY index.html /UD-Demo-Workspace-GratteCiel/ud-viz-context/
 COPY bootstrap.js /UD-Demo-Workspace-GratteCiel/ud-viz-context/src
-COPY 3DTiles.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/layer/3DTiles.json
-COPY sparql_server.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
+COPY configs/3DTiles.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/layer/3DTiles.json
+COPY configs/sparql_server.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
+COPY configs/help.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/widget/help.json
+COPY configs/sparql_widget.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/widget/sparql_widget.json
 
 CMD [ "npm", "run", "start"]

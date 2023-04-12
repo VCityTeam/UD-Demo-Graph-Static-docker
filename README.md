@@ -39,7 +39,7 @@ docker-compose build udviz
 ```
 
 ### Upload RDF-Store Dataset
-All files in the [data folder](./strabon-context/data) are copied into the Strabon container at `/data`. To upload these files into Strabon to be used by the sparqlModule:
+To upload these files into Strabon to be used by UD-Viz:
 1. Open a web browser and navigate to `localhost:9007/strabon`
 2. From the left menu, click *Explore/Modify operations* then *Store*
 3. Copy and paste the local path of each file in the data folder as `file:///data/[file to upload]` into the *URI Input* field and click *Store from URI*
