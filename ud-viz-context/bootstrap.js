@@ -4,17 +4,17 @@ import * as udvizBrowser from "@ud-viz/browser";
 /* eslint-disable no-new */
 
 udvizBrowser.FileUtil.loadMultipleJSON([
-  '../assets/config/all_widget.json',
-  '../assets/config/extent_gratteciel.json',
-  '../assets/config/frame3D_planars.json',
-  '../assets/config/layer/3DTiles.json',
-  '../assets/config/layer/base_maps.json',
-  '../assets/config/layer/elevation.json',
-  '../assets/config/styles.json',
-  '../assets/config/widget/about.json',
-  '../assets/config/widget/help.json',
-  '../assets/config/widget/sparql_widget.json',
-  '../assets/config/server/sparql_server.json'
+  'assets/config/all_widget.json',
+  'assets/config/extent_gratteciel.json',
+  'assets/config/frame3D_planars.json',
+  'assets/config/layer/3DTiles.json',
+  'assets/config/layer/base_maps.json',
+  'assets/config/layer/elevation.json',
+  'assets/config/styles.json',
+  'assets/config/widget/about.json',
+  'assets/config/widget/help.json',
+  'assets/config/widget/sparql_widget.json',
+  'assets/config/server/sparql_server.json'
 ]).then((configs) => {
   // http://proj4js.org/
   // define a projection as a string and reference it that way
