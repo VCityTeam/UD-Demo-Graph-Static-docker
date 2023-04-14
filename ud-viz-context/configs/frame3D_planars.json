@@ -1,0 +1,21 @@
+[
+  {
+    "range": 1000,
+    "heading": -30,
+    "tilt": 17,
+    "coordinates": {
+      "x": 1846300,
+      "y": 5175800
+    }
+  },
+  {
+    "maxSubdivisionLevel": 10,
+    "range": 10000000,
+    "heading": 1,
+    "tilt": 89,
+    "coordinates": {
+      "x": 1842345,
+      "y": 5175327
+    }
+  }
+]

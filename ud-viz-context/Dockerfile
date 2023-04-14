@@ -30,6 +30,7 @@ RUN npm install \
 COPY index.html                 /UD-Demo-Workspace-GratteCiel/ud-viz-context/index.html
 # copy configs
 COPY configs/extent_gratteciel.json /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/extent_gratteciel.json
+COPY configs/frame3D_planars.json   /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/frame3D_planars.json
 COPY configs/3DTiles.json           /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/layer/3DTiles.json
 COPY configs/sparql_server.json     /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
 COPY configs/help.json              /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/widget/help.json
