@@ -1,8 +1,9 @@
 {
   "icon_path": "./assets/svg/help.svg",
   "htmlPaths": [
+    "./assets/html/camera.html",
     "./assets/html/contribute.html",
-    "./assets/html/dataExplorerUserGuide.html",
-    "./assets/html/camera.html"
+    "./assets/html/widget_descriptions.html",
+    "./assets/html/sparql_guide.html"
   ]
 }
