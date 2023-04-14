@@ -35,6 +35,11 @@ COPY configs/3DTiles.json           /UD-Demo-Workspace-GratteCiel/ud-viz-context
 COPY configs/sparql_server.json     /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/server/sparql_server.json
 COPY configs/help.json              /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/widget/help.json
 COPY configs/sparql_widget.json     /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/config/widget/sparql_widget.json
+# copy html
+COPY html/contribute.html           /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/html/contribute.html
+COPY html/camera.html               /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/html/camera.html
+COPY html/sparql_guide.html         /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/html/sparql_guide.html
+COPY html/widget_descriptions.html  /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/html/widget_descriptions.html
 # copy queries
 COPY queries/buildingCount.rq       /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/queries/buildingCount.rq
 COPY queries/buildingsDetails.rq    /UD-Demo-Workspace-GratteCiel/ud-viz-context/assets/queries/buildingsDetails.rq
