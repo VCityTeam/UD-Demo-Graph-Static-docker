@@ -15,6 +15,7 @@ RUN node --version \
 WORKDIR /
 RUN git clone https://github.com/VCityTeam/UD-Demo-Workspace-GratteCiel.git
 WORKDIR /UD-Demo-Workspace-GratteCiel
+RUN git checkout 312593c54a1dd591abca169554ed1cfc5614b53d
 RUN git submodule init \
  && git submodule update
 WORKDIR /UD-Demo-Workspace-GratteCiel/ud-viz-context/UD-Viz
