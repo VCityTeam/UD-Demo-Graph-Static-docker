@@ -75,7 +75,7 @@ To configure the demo and the components that support it edit the `.env` file to
 The following sections will describe how to configure this file for each component. 
 
 ### Build Images and run containers
-First, edit the [credential.properties](./strabon-context/credentials.properties) file to set the credentials used to authenticate user of the strabon frontend.
+First, edit the [.env](.env) file to set the credentials used to authenticate user of the strabon frontend.
 
 Then, build the PostGIS, Strabon, and UD-Viz docker images and run their containers:
 ```
