@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.8'
 volumes:
   postgres_volume:
     name: ${POSTGRES_VOLUME_NAME}
@@ -15,6 +15,11 @@ services:
     ports:
       - ${POSTGRES_PORT}:5432
   strabon:
+    build:
+      context: https://github.com/VCityTeam/Strabon-CORS-Docker.git
+      args:
+        - STRABON_USERNAME=${STRABON_USERNAME}
+        - STRABON_PASSWORD=${STRABON_PASSWORD}
     image: vcity/strabon-cors
     hostname: strabon
     environment:
